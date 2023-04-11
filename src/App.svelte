@@ -41,9 +41,8 @@
             intro x.
             unfold compose, id. rewrite rev_rev.
             reflexivity.
-          Qed.
-          
-</textarea>
+          Qed.     
+        </textarea>
       </div>
     </div>
   </div>
