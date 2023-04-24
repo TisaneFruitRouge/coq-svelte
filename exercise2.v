@@ -1,10 +1,10 @@
 (**
     [config]
-        showGoal: false
+        showGoal: true
         canChangeSettings: false
     [/config]
 
-    First part
+    Première partie
 **)
 From Coq Require Import List.
 Import ListNotations.
@@ -20,9 +20,7 @@ Qed.
           
 
 (**
-    Second Part
-    lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
-    lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
+    LA SECONDE PARTIE
 **)          
           
 Theorem rev_rev A : forall (l : list A), rev (rev l) = l.

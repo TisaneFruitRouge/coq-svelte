@@ -2,5 +2,11 @@ export interface ICurrentExercise {
     text: string;
     isCompleted: boolean;
     showGoal: boolean;
-    canChangeSettings: true;
+    canChangeSettings: boolean;
+    blocks: Array<IBlock>
+}
+
+export interface IBlock {
+    text: string;
+    type: "coq" | "comment"
 }
