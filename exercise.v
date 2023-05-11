@@ -5,8 +5,10 @@
     [/config]
 
     # First part
+        TEXT
+    
     ## second part
-    **damn**, this is *great*
+        __damn__, this is _great_
 **)
 
 From Coq Require Import List.

@@ -95,3 +95,17 @@ export const parseExercise = (newStore: ICurrentExercise) => {
         } 
     ];
 }
+
+
+export let filterReadOnly = (text: string) => {
+    let readOnlyStart = text.indexOf("(*/HIDE*)");
+    let readOnlyEnd   = text.indexOf("(*\\HIDE*)");
+
+    if (readOnlyStart === -1 || readOnlyEnd === -1 || readOnlyEnd < readOnlyStart) {
+        return '';
+    }
+
+    let readOnlyText = text.substring(readOnlyStart+10, readOnlyEnd); // + 10 to remove the (*/HIDE*)\n
+
+    return readOnlyText;
+}

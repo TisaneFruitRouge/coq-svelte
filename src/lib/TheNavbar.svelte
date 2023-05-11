@@ -1,27 +1,13 @@
 <script lang="ts">
-  import { currentExercise } from '../store';
-
-  let fileinput;
-  
-  const onFileSelected = (e) => {
-    
-    let fr = new FileReader();
-    
-    fr.onload = () => {
-      $currentExercise.text = fr.result as string;
-    }
-              
-    fr.readAsText(e.target.files[0]);
-  }
+  import {Link} from "svelte-navigator";
 
 </script>
 
 <nav class="">   
-  <a href="/">Home</a>
-  <div>
-    <label for="add-file">Upload an exercise</label>
-    <input id="add-file" name="add-file" style="display:none" type="file" accept=".v," on:change={(e)=>onFileSelected(e)} bind:this={fileinput} >
-  </div>
+  <Link to="/">Home</Link>
+	<Link to="admin">Admin</Link>
+	<Link to="exercise">Exercise</Link>
+  <Link to="login">Login</Link>
 </nav>
 
 

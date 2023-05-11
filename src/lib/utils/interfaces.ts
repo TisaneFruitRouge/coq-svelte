@@ -10,3 +10,9 @@ export interface IBlock {
     text: string;
     type: "coq" | "comment"
 }
+
+export interface IUser {
+    name: string;
+    isStudent: boolean;
+    isAdmin: boolean;
+}
