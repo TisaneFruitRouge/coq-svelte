@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
-
+  import showdown from 'showdown'; 
+  
   import TheNavbar from "./lib/TheNavbar.svelte";
 
   import { currentExercise } from './store';
@@ -29,8 +30,11 @@
       if (block.type === 'comment') {
         let newNode = document.createElement('div');
         
+        let converter = new showdown.Converter();
+        let html = converter.makeHtml(block.text);
+
         newNode.classList.add('comment');
-        newNode.innerText = block.text;
+        newNode.innerHTML = html;
 
         coq_doc.appendChild(newNode);
       } else if (block.type === "coq") {
@@ -45,7 +49,8 @@
       }
     }
 
-    document.getElementById('panel-wrapper').remove();
+    document.getElementById('panel-wrapper').remove(); 
+    // js coq creates a panel-wrapper every time it starts, so we need to remove the last one
     coq_worker = await JsCoq.start(jscoq_ids, jscoq_opts);
 
     await coq_worker.launch();
@@ -64,7 +69,7 @@
   <div id="ide-wrapper" >
     <div id="code-wrapper">
       <div id="document">
-        <h1>Please upload and exercise file... 🖊</h1>
+        <h1>Please upload an exercise file... 🖊</h1>
       </div>
     </div>
   </div>

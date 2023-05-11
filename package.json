@@ -16,6 +16,7 @@
     "vite": "^4.2.0"
   },
   "dependencies": {
-    "jscoq": "^0.16.0"
+    "jscoq": "^0.16.0",
+    "showdown": "^2.1.0"
   }
 }
